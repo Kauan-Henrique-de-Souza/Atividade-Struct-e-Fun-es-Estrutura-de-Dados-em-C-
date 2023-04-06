@@ -1,19 +1,19 @@
 #include <stdio.h>
 
-float Receita(float r, float s)
+float Receita(float r, float saldo)
 {
     float receita;
-    receita= s + r;
+    receita= saldo + r;
     
     return receita;
     
 }
 
-float Despesa(float d, float s)
+float Despesa(float d, float saldo)
 {
     float despesa;
    
-   despesa= s - d;
+   despesa= saldo - d;
     
     return despesa;
     
@@ -41,19 +41,17 @@ int main()
     
     float r;
     float d;
-    float saldo;
     float cal_receita;
     float cal_despesa;
     float cal_sf;
     
-    cal_receita = Receita(r,s);
-    cal_despesa = Despesa(d,s);
+    proj.saldo = Receita(proj.receita,proj.saldo);
+    proj.saldo = Despesa(proj.despesa,proj.saldo);
     
-    cal_sf = Receita - Despesa;
-    printf("Saldo final do projeto:%f",&cal_sf);
+
     
+    printf("Saldo final do projeto:%f",proj.saldo);
     
     return 0;
 }
-
 
